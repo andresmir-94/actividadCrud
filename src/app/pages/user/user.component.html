@@ -1,1 +1,26 @@
-<p>user works!</p>
+<div class="card mb-3 shadow rounded" style="max-width: 100%;">
+  <div class="row g-0 align-items-center">
+    <div class="col-md-4 border-end">
+      <img [src]="theUser?.image || 'No disponible'" class="img card-img-top img-fluid rounded-circle p-3" width="100" height="100" [alt]="theUser?.first_name || 'No disponible'">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title">{{theUser?.first_name || 'No disponible'}}</h4>
+        <h4 class="card-title">{{theUser?.last_name ||'No disponible'}}</h4>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <p class="card-text fw-bolder">Nombre Usuario:</p>
+          <p class="card-text">{{theUser?.username || 'No disponible'}}</p>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <p class="card-text fw-bolder">Email:</p>
+          <p class="card-text">{{theUser?.email || 'No disponible' }}</p>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
+          <a  class="btn btn-outline-danger btn-sm" (click)="deleteUser(idUser)" >Eliminar</a>
+          <a  class="btn btn-outline-warning btn-sm" [routerLink]="['/updateuser', idUser]">Actualizar</a>
+          <a  class="btn btn-outline-secondary btn-sm" [routerLink]="['']" >Volver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
