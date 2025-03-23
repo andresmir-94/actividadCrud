@@ -1,1 +1,13 @@
-<p>home works!</p>
+<section class="users">
+    <div class="row justify-content-center text-center shadow p-3 mb-5 bg-body rounded">
+        @for (user of arrUsersObservable; track user._id) {
+        <article class="col-12 col-md-6 col-lg-3 mb-2">
+            <app-user-card [miUser]="user"></app-user-card>
+        </article>
+    }
+    </div>
+<div class="d-flex justify-content-center py-5 gap-3">
+    <button (click)="loadPage(pageOne)" type="button" class="btn btn-outline-primary rounded-circle">1</button>
+    <button (click)="loadPage(pageTwo)" type="button" class="btn btn-outline-primary rounded-circle">2</button>
+</div>
+</section>
