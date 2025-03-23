@@ -1,1 +1,30 @@
-<p>form-user works!</p>
+<section class="container">
+    <div class="card shadow">
+        <div class="card-header bg-light border-bottom">
+            <h3 class="text-start">{{title}} Usuario</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="userForm" (ngSubmit)="getDataForm()">
+
+                <input type="hidden" formControlName="_id">
+                <div class="mb-3">
+                    <label for="nombreUsuario" class="form-label">Nombre Usuario</label>
+                    <input type="text" class="form-control" formControlName="nombreUsuario" id="nombreUsuario" placeholder="Ingrese el nombre del usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="apellidosUsuario" class="form-label">Apellidos Usuario</label>
+                    <input type="text" class="form-control" formControlName="apellidosUsuario" id="apellidosUsuario" placeholder="Ingrese los apellidos del usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="emailUsuario" class="form-label">Email Usuario</label>
+                    <input type="text" class="form-control" formControlName="emailUsuario" id="emailUsuario" placeholder="Ingrese el email del usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="imagenUsuario" class="form-label">Imagen Usuario</label>
+                    <input type="text" class="form-control" formControlName="imagenUsuario" id="imagenUsuario" placeholder="Ingrese la URL de la imagen del usuario">
+                </div>
+                <input type="submit" class="btn btn-primary" [value]="userForm.get('_id')?.value ? 'Actualizar' : 'Registrar'">
+            </form>
+        </div>
+    </div>
+</section>
